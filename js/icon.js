@@ -1,7 +1,7 @@
 define(
     function(require, exports, module)
     {
-        function onClick(panel)
+        function bindPanel(panel)
         {
             icon.on("click",
                 event =>
@@ -20,7 +20,7 @@ define(
         let icon = $("<a class='CBRACKETS__ICON' href='#'></a>").appendTo("#main-toolbar .buttons"),
             answer =
             {
-                onClick: (onClick).bind(this)
+                bindPanel: (bindPanel).bind(this)
             };
 
         return answer;

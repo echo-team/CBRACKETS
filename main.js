@@ -13,7 +13,8 @@ define(
                 },
                 modules:
                 {
-                    icon: null
+                    icon: null,
+                    panel: null
                 }
             };
 
@@ -23,7 +24,6 @@ define(
                 environment.modules.icon = require("js/icon");
                 environment.modules.panel = require("js/panel");
 
-                console.log(environment.modules);
-                environment.modules.icon.onClick(environment.modules.panel);
+                environment.modules.icon.bindPanel(environment.modules.panel);
             });
     });
