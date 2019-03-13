@@ -1,7 +1,14 @@
 define(
     function(require, exports, module)
     {
-        const spawn = require('child_process');
+        let NodeDomain = brackets.getModule('utils/NodeDomain'),
+            ExtensionUtils = brackets.getModule('utils/ExtensionUtils');
+
+        /**
+         * Channel between client and server js scripts to exec system commands
+         * @type {NodeDomain}
+         */
+        let compiler = new NodeDomain('compiler', ExtensionUtils.getModulePath(module, 'node/compiler'));
 
         /**
          * Builds given file
@@ -9,24 +16,6 @@ define(
          */
         function build(path)
         {
-            let cmd = spawn('cmd');
-
-            cmd.stdout.on('data',
-                function(data)
-                {
-
-                });
-
-            cmd.stderr.on('data',
-                function(data)
-                {
-
-                });
-
-            setTimeout(
-                () =>
-                {
-
-                }, 1000);
+            compiler.exec('build', path);
         }
     });
