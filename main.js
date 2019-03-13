@@ -27,5 +27,6 @@ define(
                 environment.modules.compiler = require("js/compiler");
 
                 environment.modules.icon.bindPanel(environment.modules.panel);
+                environment.modules.compiler.bindLog(environment.modules.panel.log);
             });
     });

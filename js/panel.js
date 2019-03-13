@@ -34,6 +34,14 @@ define(
         let answer =
             {
                 DOM: panel,
+                log: $('[id=CBRACKETS.log]'),
+                buttons:
+                {
+                    run: $('[id=CBRACKETS.run]'),
+                    stop: $('[id=CBRACKETS.stop]'),
+                    build: $('[id=CBRACKETS.build]'),
+                    settings: $('[id=CBRACKETS.settings]')
+                },
                 addListener: addListener
             };
 

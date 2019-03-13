@@ -11,14 +11,29 @@ define(
         let compiler = new NodeDomain('compiler', ExtensionUtils.getModulePath(module, 'node/compiler'));
 
         /**
+         * Container for output from cmd/terminal
+         * @type {Element}
+         */
+        let log;
+
+        /**
          * Passes output of compiler from cmd/terinal into panel
          * @listens data - event of data appearing in server cmd/terminal
          */
         compiler.on('data',
-            () =>
+            (data) =>
             {
-
+                log.innerHTML += data + '';
             });
+
+        /**
+         * Binds element where output from cmd/terminal will be displayed
+         * @param {Element} panelLog - logging element
+         */
+        function bindLog(panelLog)
+        {
+            log = panelLog;
+        }
 
         /**
          * Builds given file
@@ -28,4 +43,14 @@ define(
         {
             compiler.exec('build', path);
         }
+
+        /**
+         * Public parts of class
+         * @type {Object}
+         */
+        let answer =
+            {
+                bindLog: bindLog
+            }
+        return answer;
     });
