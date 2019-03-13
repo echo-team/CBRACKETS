@@ -11,6 +11,16 @@ define(
         let compiler = new NodeDomain('compiler', ExtensionUtils.getModulePath(module, 'node/compiler'));
 
         /**
+         * Passes output of compiler from cmd/terinal into panel
+         * @listens data - event of data appearing in server cmd/terminal
+         */
+        compiler.on('data',
+            () =>
+            {
+
+            });
+
+        /**
          * Builds given file
          * @param {String} path - path to file to build
          */
