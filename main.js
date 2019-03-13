@@ -14,7 +14,8 @@ define(
                 modules:
                 {
                     icon: null,
-                    panel: null
+                    panel: null,
+                    compiler: null
                 }
             };
 
@@ -23,6 +24,7 @@ define(
             {
                 environment.modules.icon = require("js/icon");
                 environment.modules.panel = require("js/panel");
+                environment.modules.compiler = require("js/compiler");
 
                 environment.modules.icon.bindPanel(environment.modules.panel);
             });

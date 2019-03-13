@@ -9,7 +9,7 @@ define(
 
 
         ExtensionUtils.loadStyleSheet(module, "../css/panel.css");
-        panel = WorkspaceManager.createBottomPanel(id, $(require("text!../html/panel.html")), 200);
+        panel = WorkspaceManager.createBottomPanel(id, $(require("text!../html/panel.html")), 0);
 
         $('<img src="' + require.toUrl("../icons/play.svg") + '">').appendTo($('[class="btn CBRACKETS__BUTTON"]')[0]);
         $('<img src="' + require.toUrl("../icons/stop.svg") + '">').appendTo($('[class="btn CBRACKETS__BUTTON"]')[1]);
