@@ -50,7 +50,8 @@ define(
          */
         let answer =
             {
-                bindLog: bindLog
+                bindLog: bindLog,
+                build: build.bind(this)
             }
         return answer;
     });

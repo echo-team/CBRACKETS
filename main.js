@@ -28,5 +28,7 @@ define(
 
                 environment.modules.icon.bindPanel(environment.modules.panel);
                 environment.modules.compiler.bindLog(environment.modules.panel.log);
+
+                environment.modules.panel.build.on('click', environment.modules.compiler.build);
             });
     });
